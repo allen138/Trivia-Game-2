@@ -66,7 +66,7 @@ var game = {
         }
     },
     nextQuestion: function () {
-        game.counter = 30;
+        game.counter = 20;
         $("#timer").html(game.counter);
         game.currentQuestion++;
         game.loadQuestion();
