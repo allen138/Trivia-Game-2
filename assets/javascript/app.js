@@ -77,9 +77,9 @@ var game = {
         $(".wrapper").html("<h2 id='all-done'>Out of Time!</h2>")
         $(".wrapper").append("<h3> The correct answer is: " + questions[game.currentQuestion].correctAnswer + "</h3>")
         if (game.currentQuestion === questions.length - 1) {
-            setTimeout(game.results, 1000 * 3);
+            setTimeout(game.results, 1000 * 2);
         } else {
-            setTimeout(game.nextQuestion, 1000 * 3);
+            setTimeout(game.nextQuestion, 1000 * 2);
         }
     },
     results: function () {
@@ -106,9 +106,9 @@ var game = {
         game.correct++;
         $(".wrapper").html("<h2> You Answered Correctly! </h2><hr>");
         if (game.currentQuestion === questions.length - 1) {
-            setTimeout(game.results, 1000 * 5);
+            setTimeout(game.results, 1000 * 2);
         } else {
-            setTimeout(game.nextQuestion, 1000 * 3);
+            setTimeout(game.nextQuestion, 1000 * 2);
         }
     },
     answeredIncorrectly: function () {
@@ -117,9 +117,9 @@ var game = {
         $(".wrapper").html("<h2> You answered Incorrectly! </h2>");
         $(".wrapper").append("<h3> The correct answer was: " + questions[game.currentQuestion].correctAnswer + "</h3><hr>");
         if (game.currentQuestion === questions.length - 1) {
-            setTimeout(game.results, 1000 * 3);
+            setTimeout(game.results, 1000 * 2);
         } else {
-            setTimeout(game.nextQuestion, 1000 * 3);
+            setTimeout(game.nextQuestion, 1000 * 2);
         }
     },
 
