@@ -34,6 +34,14 @@ var questions = [{
     question: "Where was AC/DC formed?",
     answers: ["Russia", "Mexico", "Canada", "United States", "Australia"],
     correctAnswer: "Australia",
+}, {
+    question: "Which artist/group was inducted to the Rock N' Roll Hall of Fame in 1994?",
+    answers: ["Metallica", "Aerosmith", "Buddy Guy", "Elton John", "Led Zeppelin"],
+    correctAnswer: "Elton John",
+}, {
+    question: "Which artist/group has NOT been inducted to the Rock N' Roll Hall of Fame?",
+    answers: ["Al Green", "Aerosmith", "Foo Fighters", "Frank Zappa", "Tupac Shakur"],
+    correctAnswer: "Foo Fighters",
 }];
 
 // start button 
@@ -66,6 +74,7 @@ var game = {
         }
     },
     nextQuestion: function () {
+        $(".popUp").remove();
         game.counter = 20;
         $("#timer").html(game.counter);
         game.currentQuestion++;
@@ -74,8 +83,8 @@ var game = {
     timeUp: function () {
         clearInterval(timer);
         game.unanswered++;
-        $(".wrapper").html("<h2 id='all-done'>Out of Time!</h2>")
-        $(".wrapper").append("<h3> The correct answer is: " + questions[game.currentQuestion].correctAnswer + "</h3>")
+        $(".wrapper").html("<h2 class='popUp' id='all-done'>Out of Time!</h2>")
+        $(".wrapper").append("<h3 class='popUp'> The correct answer is: " + questions[game.currentQuestion].correctAnswer + "</h3>")
         if (game.currentQuestion === questions.length - 1) {
             setTimeout(game.results, 1000 * 2);
         } else {
@@ -104,7 +113,7 @@ var game = {
     answeredCorrectly: function () {
         clearInterval(timer);
         game.correct++;
-        $(".wrapper").html("<h2> You Answered Correctly! </h2><hr>");
+        $(".wrapper").html("<h2 class='popUp'> You Answered Correctly! </h2>");
         if (game.currentQuestion === questions.length - 1) {
             setTimeout(game.results, 1000 * 2);
         } else {
@@ -114,8 +123,8 @@ var game = {
     answeredIncorrectly: function () {
         clearInterval(timer);
         game.incorrect++;
-        $(".wrapper").html("<h2> You answered Incorrectly! </h2>");
-        $(".wrapper").append("<h3> The correct answer was: " + questions[game.currentQuestion].correctAnswer + "</h3><hr>");
+        $(".wrapper").html("<h2 class='popUp'> You answered Incorrectly! </h2>");
+        $(".wrapper").append("<h3 class='popUp'> The correct answer was: " + questions[game.currentQuestion].correctAnswer + "</h3>");
         if (game.currentQuestion === questions.length - 1) {
             setTimeout(game.results, 1000 * 2);
         } else {
