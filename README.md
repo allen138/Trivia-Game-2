@@ -1,4 +1,5 @@
 # Trivia-Game-2
+![Trivia Game](assets/images/triviagameSS.png)
 ## Overview 
 - This is a Rock and Roll theme trivia game! You will have 20 seconds to answer each question. The program will count how many questions you got correct, incorrect and unanswered. If answered incorrectly, the program will display the correct answer and then move on to the next question. When you reach the end of the game, the program will display the results and you can click "Restart" to play again. 
 
